@@ -1,3 +1,42 @@
+Meterpreter commands
+sysinfo / sistem bilgilerini görüntüle
+ps / Çalışan işlemleri listeleyin ve görüntüleyin
+kill / Çalışan bir işlemi sonlandırın
+upload or download / Upload / download a file
+background / oturumu arka plandan devam etmek
+set / Kullanılan modüle ait özellikleri konfigure etmek için set komutu kullanılır.
+search
+show : İçerdiği modülleri göstermek için kullanılan komuttur.
+show options : Bu komut ise seçmiş olduğumuz Exploit’in ayarını göstermek için kullanabiliriz.
+show payloads : Kullanabileceğimiz payloadları gösterir
+help : Metasploit’te kullanabileceğimiz başlıca kodları bize gösterir.
+info : Örnek vermek gerekirse bir Exploit seçtik ve info yazarak o Exploit’e dair ayarları bizlere çıkarır kısacası Exploit’e dair temel bilgileri bize verir.
+set – setg : Değişken ve parametleri değerini gireceğimiz zaman ve payload seçtiğimizde veri atanması için kullanacağımız komuttur.
+Unset – unsetg : Atanan değeri kaldırır ve değişkeni kaldırır
+back   :  Bir önceki menüye geri dönüşü saplar
+jobs : İşlemleri gösterir ve düzenlemek için kullanılır
+load : Eklenti yüklenimi için kullanılır
+irb : irb scripting modunu bizlere getirir.
+loadpath  :   Belirtilen yoldan istenilen modülü/Exploiti yükler.
+route: Oturum trafiğinin yönlendirilme işlemini sağlar
+save :Veriyi kayıt eder,depolar.
+search: Modüllerde arama yapar.
+sessions : Aktif olan oturumları gösterir ve bilgisini verir.
+unload : Framework için mevcut eklentiyi kaldırır.
+Exploit : Hedef sisteme/makine için Exploiti başlatmak için kullanılan komuttur.
+show targets : Expolitin içindeyken hangi işletim sistemlerine uygulayabileceğimizi listeler.
+Payload : Listener yani dinleyicide diyebiliriz sızdığımız sistemde bırakacağımız kodlardır.
+Post : Bırakılan mesajdır.
+Auxiliary : Bilgi toplama amaçlı kullanılan yardımcı programlar ve araçlardır.
+Nops : No Operations’ın kısaltılmışıdır ve işlemciyi zorlamak için kullanılan modüldür.
+( show nops ile modüllere göz atabilirsiniz. )
+Encoders : Antivirüs programlarını atlatmak için kullanılan şifreleme aracıdır.
+Exploit Targets : Hedefin uyumlu olduğu sistemler bu kısım altında gösterilir.
+use exploit/multi/handler
+
+Stop some extra running jobs:
+
+    jobs -k 2-6,7,8,11..15
 backdoor u gizleme
 ps / çalışan uygulamaları gösterir
 migrate saklicağımız dosyanın id si / payloadı oraya aktarır

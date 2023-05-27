@@ -1,0 +1,31 @@
+21 FTP (File Transfer Protocol): İstemcinin bilgisayarı ile bir bilgisayar ağındaki sunucuya dosya göndermeyi sağlayan ağ protokolüdür. FTP’ye günlük internet kullanıcıları ihtiyaç duymaz. Fakat internet site geliştiricileri FTP’yi hemen hemen her gün birçok kez kullanır. FTP protokolü TCP/IP ağı üzerinden bilgisayarlara erişim sağlayabilir ve dosya paylaşımı yapabilir.
+
+22 SSH (Remote Login Protocol): Uzak sunucu bağlantı protokolüdür. Ağ üzerinde bulunan bir sunucuya bağlanmaya ve bağlanılan sunucu üzerinde komut çalıştırma, dosya transferi gibi işlemleri gerçekleştirmeye olanak sağlar. Güvenli iletişim kanalları gerektiren durumların tamamında kullanılabilmektedir. POP3 mail protokolü gibi iletişimini şifrelenmemiş şekilde gerçekleştiren servisler SSH üzerinden aktarılarak şifreli ve güvenli duruma getirilebilir.
+
+23 TELNET: Uzak bilgisayarların birbirleriyle haberleşmeleri, erişim ve komut verebilmeleri için telnet üzerinden haberleşme sağlanır. Telnet sayesinde TCP/IP protokolü üzerinden, internet ağı kullanarak uzaktaki makinaya bağlanabilir. Eski bir bağlantı protokolü olduğu için bu portta güvenlik açığı oluşabilir. Dikkat edilmesi gerekir.
+
+25 SMTP (Simple E-posta Transfer Protocol): Bir e-posta göndermek için sunucu ile istemci arasındaki iletişimi sağlayan protokoldür. Sadece e-posta yollamak için kullanılan bir protokoldür. İstemci bilgisayar SMTP sunucusuna bağlanarak gerekli kimlik bilgilerini gönderir, sunucunun onay vermesi halinde gerekli e-postayı sunucuya iletir ve bağlantıyı sonlandırır. E-posta almak için POP3 veya IMAP protokolünü kullanır.
+
+53 DNS (Domain Name Service): Alan isimlendirme sistemi olarak adlandırılır. İnternetin telefon rehberidir. İsimlerin IP’ye dönüştürülmesi maksadıyla kullanılır. Bu sistem 256 karaktere kadar da büyüyebilir. DNS aynı zaman da bilgisayar ya da bilgisayar sistemleri ile çalışan cihazların IP’lerini çözerek birbirleri ile haberleşmelerini sağlar. DNS günlük hayatta IP adreslerinin ezberinin zor olmasından dolayı, alan adı oluşturarak kolaylık sağlamıştır.
+
+80 HTTP (Hyper Text Transfer Protocol): Bilginin sunucudan kullanıcıya nasıl ve ne şekilde aktarılacağını gösteren protokoldür. İnternet kullanıcıları aktif olarak kullanmasa da arama çubuğunda bu protokol zaten yer alır. En basit haliyle, web sayfalarının görüntülenmesini sağlar. Günlük hayatımızda internette yaptığımız her türlü surfu bu protokol sayesinde yaparız.
+
+110 POP3 (Post Office Protocol): Emailleri serverdan çekip lokalde saklamamıza imkân veren, çektiğimiz zaman bu mailleri serverdan silmemize olanak sağlayan, webmail ve diğer email sağlayıcıları tarafından başka bilgisayarlardan erişim sağlanamayan email protokolüdür. 3 rakamı, protokolün sürüm numarasıdır. POP3 kolaylığı ve görevleri az hata oranıyla yerine getirmesiyle oldukça popülerdir. Email alımı içinde genel olarak 110 portu kullanır.
+
+115 SFTP (Secure File Transfer Protocol): Güvenli dosya aktarım protokolüdür. SFTP bir SSH bağlantısından yararlanır. Bu sayede web sitesi dosyaları yönetilirken de ek bir güvenlik düzeyi sağlayabilir. SFTP yerel ve uzak bilgisayarlar arasında dosyaları yüklemek veya indirmek için kullanılır.
+
+139 NetBIOS (Network Basic Input/Output System): LAN üzerinde farklı bilgisayarların birbiri ile iletişim kurmasını sağlayan bir protokoldür. LAN üzerinde iki bilgisayar arasında veri paylaşımı için kullanılan bu port 139 portu olarak geçmektedir.
+
+143 IMAP (Internet Message Access Protocol): POP3 gibi mailleri yerel email istemcilerine almak için kullanılır. Bu protokolde POP3’e göre en büyük fark, sadece email header bilgisi indirilmesidir. Çift yönlü iletişime sahiptir.
+
+161 SNMP (Simple Network Management Protocol): Basit ağ yönetim protokolüdür. Ağı yönetmede, ağ yöneticisine yardımcı olan basit bir protokoldür. Geniş ağlarda, cihazların yönetimini ve denetimini kolaylaştırmak için tasarlanmıştır.
+
+443 SSL (Secure Sockets Layer): Güvenli Soket Katmanı olarak da bilinir. Web sitelerine güvenli bağlantıyı sağlayan sertifikalardır.
+
+445 SMB (Server Message Blocked): Server-client arasındaki iletişimi sağlayan bir protokol. Paylaşılan dosyalara erişimi, ağlar, yazıcılar ve çeşitli bağlantıları sağlar. SMB istemci-sunucu uygulamasıdır.
+
+514 SysLog: Linux sistemlerdeki loglama yapısına verilen addır. Syslog, Linux sistemlerde yapılan her işlemin kaydının tutulduğu sistemlerdir. 514. Portu kullanır. Sistem yöneticileri için büyük önem taşır. Sistem üzerindeki anomaliler bu sayede tespit edilebilir.
+
+3306 MySQL: Uzay bilgisayarda MySQL erişim sağlayabilmek için kullanılan port numarası 3306’dır. Veritabanı yönetim sistemidir.
+
+3389 RDP (Remote Desktop Connection): Uzak Masaüstü Bağlantısıdır. Windows bulunan aynı ağdaki herhangi bir makinaya bağlanmaya yarar

